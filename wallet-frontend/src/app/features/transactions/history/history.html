@@ -1,0 +1,83 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+
+  <div class="card">
+
+    <div class="card-header">
+
+      <h2>Transaction History</h2>
+
+    </div>
+
+
+
+    <div *ngIf="loading" class="text-center"><span class="spinner" style="border-top-color: #4f46e5"></span> Loading...</div>
+
+   
+
+    <table *ngIf="!loading && transactions.length > 0" class="history-table">
+
+      <thead>
+
+        <tr>
+
+          <th>Date</th>
+
+          <th>Description</th>
+
+          <th>Status</th>
+
+          <th class="text-right">Amount</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let txn of transactions">
+
+          <td>{{ txn.createdAt | date:'short' }}</td>
+
+          <td>
+
+            <span *ngIf="txn.senderUserId === userId && txn.receiverUserId !== userId">Sent to {{ txn.receiverUserId }}</span>
+
+            <span *ngIf="txn.receiverUserId === userId && txn.senderUserId !== userId">Received from {{ txn.senderUserId }}</span>
+
+            <span *ngIf="txn.senderUserId === userId && txn.receiverUserId === userId">Added to Wallet</span>
+
+          </td>
+
+          <td>
+
+            <span class="badge" [ngClass]="txn.status.toLowerCase()">{{ txn.status }}</span>
+
+          </td>
+
+          <td class="text-right"
+
+              [class.text-danger]="txn.senderUserId === userId && txn.receiverUserId !== userId"
+
+              [class.text-success]="txn.receiverUserId === userId">
+
+            {{ txn.senderUserId === userId && txn.receiverUserId !== userId ? '-' : '+' }}
+
+            ₹{{ txn.amount | number:'1.2-2' }}
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+   
+
+    <div *ngIf="!loading && transactions.length === 0" class="text-center text-muted">No transactions found.</div>
+
+  </div>
+
+</div>

@@ -1,0 +1,7 @@
+.navbar {
+  background: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.nav-brand { font-size: 1.25rem; font-weight: bold; color: var(--primary); }
+.nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-muted); font-weight: 500; }
+.nav-links a.active, .nav-links a:hover { color: var(--primary); }
+.logout-btn { margin-left: 20px; background: none; border: 1px solid #e5e7eb; padding: 5px 12px; border-radius: 6px; cursor: pointer; }

@@ -1,0 +1,11 @@
+.alert-error {
+  background-color: #fee2e2; /* Light Red Background */
+  color: #991b1b;           /* Dark Red Text */
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  border: 1px solid #fecaca;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

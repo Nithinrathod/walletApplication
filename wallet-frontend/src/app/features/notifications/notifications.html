@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="card" style="max-width: 800px; margin: 0 auto;">
+    <h2>Notifications</h2>
+    <div class="notify-list">
+      <div class="notify-item" *ngFor="let item of notifications">
+        <div class="notify-icon" [class.email]="item.type === 'EMAIL'">
+          {{ item.type === 'EMAIL' ? '✉️' : '🔔' }}
+        </div>
+        <div class="notify-content">
+          <div class="notify-header">
+            <strong>{{ item.title }}</strong>
+            <small>{{ item.sentAt | date:'MMM d, h:mm a' }}</small>
+          </div>
+          <p>{{ item.message }}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="notifications.length === 0" class="text-center">No notifications.</div>
+  </div>
+</div>

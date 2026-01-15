@@ -1,0 +1,22 @@
+/* src/app/features/transactions/transaction-form/transaction-form.css */
+
+.alert {
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.alert.success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.alert.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}

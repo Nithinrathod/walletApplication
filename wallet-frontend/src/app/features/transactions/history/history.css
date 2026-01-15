@@ -1,0 +1,39 @@
+/* src/app/features/transactions/history/history.css */
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.history-table th, 
+.history-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  text-align: left;
+}
+
+.history-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* Status Badges */
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge.success { background-color: #d1fae5; color: #065f46; }
+.badge.failed { background-color: #fee2e2; color: #991b1b; }
+.badge.blocked { background-color: #fef3c7; color: #92400e; }
+
+/* Text Colors */
+.text-right { text-align: right; }
+.text-danger { color: #ef4444; font-weight: 600; }
+.text-success { color: #10b981; font-weight: 600; }
+.text-muted { color: #9ca3af; }

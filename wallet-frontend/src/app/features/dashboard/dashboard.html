@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  
+  <div *ngIf="!walletExists" class="card text-center" style="margin-top: 50px; padding: 40px;">
+    <h2>Welcome to DigitalWallet! 🚀</h2>
+    <p style="color: #6b7280; margin: 15px 0 25px;">
+      You don't have a wallet yet. Activate it to start transacting.
+    </p>
+    <button class="btn" (click)="createWallet()" [disabled]="creating" style="margin: 0 auto;">
+      <span *ngIf="creating" class="spinner"></span>
+      {{ creating ? 'Activating...' : 'Activate Wallet' }}
+    </button>
+  </div>
+
+  <div class="dashboard-grid" *ngIf="walletExists && wallet">
+    <div class="card balance-card">
+      <h3>Available Balance</h3>
+      <h1 class="balance">₹ {{ wallet?.balance | number:'1.2-2' }}</h1>
+      
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+        
+        <div>
+          <span class="status-badge" [class.blocked]="wallet?.status === 'BLOCKED'">
+            {{ wallet?.status || 'Active' }}
+          </span>
+        </div>
+
+        <div *ngIf="wallet?.status === 'BLOCKED'" class="blocked-info">
+          <p>⚠️ Wallet is temporarily blocked.</p>
+          <small>Security Lock: Auto-unlocks in 10 mins.</small>
+          
+          <button class="btn-refresh" (click)="fetchWallet()">
+            ↻ Check Status
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card actions-card">
+      <h3>Quick Actions</h3>
+      <div class="action-buttons">
+        <button class="btn" (click)="navigate('add')" [disabled]="wallet?.status === 'BLOCKED'">
+          <span>+</span> Add Money
+        </button>
+        <button class="btn btn-outline" (click)="navigate('transfer')" [disabled]="wallet?.status === 'BLOCKED'">
+          <span>→</span> Send Money
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

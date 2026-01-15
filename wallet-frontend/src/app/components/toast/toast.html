@@ -1,0 +1,7 @@
+<div *ngIf="message" class="toast-popup">
+  <div class="toast-content">
+    <span>🔔</span>
+    <p>{{ message }}</p>
+  </div>
+  <button class="close-btn" (click)="close()">×</button>
+</div>

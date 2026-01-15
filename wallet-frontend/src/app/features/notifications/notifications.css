@@ -1,0 +1,39 @@
+.notify-list { margin-top: 1rem; }
+
+.notify-item {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid #f3f4f6;
+  align-items: flex-start;
+}
+
+.notify-item:last-child { border-bottom: none; }
+
+.notify-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d1fae5; /* Green (App) */
+  color: #065f46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.notify-icon.email {
+  background-color: #e0e7ff; /* Indigo (Email) */
+  color: #4338ca;
+}
+
+.notify-content { flex: 1; }
+
+.notify-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.notify-header small { color: #6b7280; }
