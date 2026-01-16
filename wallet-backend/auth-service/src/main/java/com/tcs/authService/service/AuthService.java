@@ -17,7 +17,7 @@ public class AuthService {
     private PasswordEncoder passwordEncoder;
     
     @Autowired
-    private JwtService jwtService; // Inject this
+    private JwtService jwtService; 
 
     public LoginResponse register(RegisterRequest req) {
         if (userRepository.findByUsername(req.getUsername()).isPresent()) {
