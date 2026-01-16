@@ -55,7 +55,7 @@ export class TransactionForm implements OnInit {
         this.loading = false;
         this.status = 'ERROR';
         
-        // ✅ UPDATED: Specific check for "Blocked" wallet error
+        
         const errorMsg = err.error?.message || '';
         if (errorMsg.toLowerCase().includes('blocked')) {
            this.message = 'Transaction Rejected: Your wallet is blocked. Please contact support.';
