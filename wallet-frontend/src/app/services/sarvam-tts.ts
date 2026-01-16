@@ -43,7 +43,7 @@ export class SarvamTTSService {
         return null;
       }),
       catchError(error => {
-        // Log the full error to see details if it fails again
+        
         console.error('Sarvam TTS API Error:', error); 
         return of(null);
       })
