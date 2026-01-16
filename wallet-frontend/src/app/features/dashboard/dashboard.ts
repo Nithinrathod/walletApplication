@@ -15,7 +15,7 @@ export class Dashboard implements OnInit {
   wallet: any;
   walletExists = true; 
   creating = false;
-  unblocking = false; // 👈 State for loading button
+  unblocking = false; 
 
   constructor(
     private walletService: Wallet, 
@@ -58,7 +58,7 @@ export class Dashboard implements OnInit {
     });
   }
 
-  // ✅ NEW: Unblock Function
+  
   unblock() {
     if (!confirm('Are you sure you want to unblock your wallet?')) return;
 
@@ -66,7 +66,7 @@ export class Dashboard implements OnInit {
     this.walletService.unblockWallet().subscribe({
       next: (res) => {
         alert('Wallet Unblocked Successfully!');
-        this.wallet.status = 'ACTIVE'; // Optimistic update
+        this.wallet.status = 'ACTIVE'; 
         this.unblocking = false;
         this.fetchWallet(); // Refresh data
         this.cd.detectChanges();
