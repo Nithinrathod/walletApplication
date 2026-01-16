@@ -15,12 +15,12 @@ export class SarvamTTSService {
       return of(null);
     }
 
-    // ✅ FIX 1: Use 'bulbul:v2'
-    // ✅ FIX 2: Use a valid speaker like 'anushka' (Female) or 'abhilash' (Male)
+    
+    
     const body = {
-      inputs: [text], // "inputs" is correct for the v2 API
+      inputs: [text], 
       target_language_code: 'te-IN',
-      speaker: 'anushka', // 'meera' was invalid
+      speaker: 'anushka', 
       pitch: 0,
       pace: 1.0,
       loudness: 1.5,
