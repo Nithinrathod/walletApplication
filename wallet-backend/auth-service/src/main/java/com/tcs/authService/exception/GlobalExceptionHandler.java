@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }
 
-    // NEW: Handle Duplicate Entry (SQL Error)
+    //  Handle Duplicate Entry (SQL Error)
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<Map<String, String>> handleDuplicateEntry(DataIntegrityViolationException ex) {
         Map<String, String> response = new HashMap<>();
