@@ -19,11 +19,10 @@ export class Wallet {
     });
   }
 
-  // ✅ NEW: Unblock Method
+  
   unblockWallet() {
     const userId = this.auth.getUserId();
     // Calls: PUT http://localhost:8090/wallet/{userId}/unblock
-    // Ensure your Backend has this endpoint!
     return this.http.put<any>(`${environment.apiUrl}/wallet/${userId}/unblock`, {});
   }
 }
