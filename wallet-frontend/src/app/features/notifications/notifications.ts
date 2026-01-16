@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Navbar } from '../../components/navbar/navbar';
-import { Notification } from '../../services/notification'; // Imports the service
+import { Notification } from '../../services/notification'; 
 
 @Component({
   selector: 'app-notifications',
@@ -21,7 +21,7 @@ export class Notifications implements OnInit {
 
   ngOnInit() {
     this.notificationService.getNotifications().subscribe({
-      next: (data: any) => { // 👈 Added type ': any'
+      next: (data: any) => { 
         // Sort by date (newest first)
         this.notifications = data.sort((a: any, b: any) => 
           new Date(b.sentAt).getTime() - new Date(a.sentAt).getTime()
@@ -29,7 +29,7 @@ export class Notifications implements OnInit {
         this.loading = false;
         this.cd.detectChanges();
       },
-      error: (err: any) => { // 👈 Added type ': any'
+      error: (err: any) => { 
         console.error('Failed to load notifications', err);
         this.loading = false;
         this.cd.detectChanges();
