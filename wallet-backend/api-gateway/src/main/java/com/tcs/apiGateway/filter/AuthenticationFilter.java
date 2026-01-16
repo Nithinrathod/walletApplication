@@ -23,7 +23,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     public GatewayFilter apply(Config config) {
         return (exchange, chain) -> {
             
-            // 1. ALTERNATIVE: Get the header list directly to avoid .containsKey() issues
+            
             List<String> authHeaders = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION);
 
             // 2. Check if it is null or empty
