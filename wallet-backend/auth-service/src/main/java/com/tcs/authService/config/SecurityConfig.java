@@ -38,7 +38,7 @@ public class SecurityConfig {
             com.tcs.authService.bean.User user = repository.findByUsername(username)
                     .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-            // 🚫 CUSTOM CHECK: Stop login if status is BLOCKED
+            //CUSTOM CHECK: Stop login if status is BLOCKED
             if ("BLOCKED".equalsIgnoreCase(user.getStatus())) {
                 throw new DisabledException("Account is blocked. Please contact support.");
             }
